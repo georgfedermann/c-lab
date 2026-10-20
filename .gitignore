@@ -1,0 +1,13 @@
+# Ignore all the compiled C programs ...
+# 1. Ignore everything
+*
+
+# 2. Allow browsing the directory structures
+!*/
+
+# 3. Whitelist all source files
+!*.c
+!*.h
+!*.md
+!.gitignore
+!Makefile
