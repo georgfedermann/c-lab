@@ -8,3 +8,7 @@ Read `&height` as "Address of height".
 gcc -O -Wall -W -pedantic -ansi -std=c99 -o <executable> source.c
 ```
 
+## Variation
+```bash
+gcc -std=c99 -Wall -Wextra -Wpedantic -O0 -g -o program source.c
+```
