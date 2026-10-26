@@ -9,5 +9,6 @@
 !*.c
 !*.h
 !*.md
+!*.sh
 !.gitignore
 !Makefile
