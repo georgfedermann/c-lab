@@ -11,11 +11,11 @@ int main(void) {
   printf("Enter a two-digit number: ");
   rv = scanf("%d", &number);
   if (rv != 1) {
-    printf("Error: Expected a single two-digit integer.\n");
+    printf("\nError: Expected a single two-digit integer.\n");
     return 101;
   }
   if (number < 10 || number > 99) {
-    printf("Error: Expected a two-digit integer.\n");
+    printf("\nError: Expected a two-digit integer.\n");
     return 102;
   }
   printf("The reversal is: %02d\n", (number % 10) * 10 + number / 10);
