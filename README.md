@@ -40,3 +40,27 @@ and apply this knowledge to Linux systems programming.
 # Status
 A work in progress. Code may contain mistakes, incomplete experiments, and approaches
 that I'll revisit as my understanding develops.
+
+# Practical Notes
+## Compiling C programs
+```bash
+gcc -O0 -Wall -Wextra -pedantic -std=c99 -g -o <program_name> <program_name>.c
+
+# If math.h is included, fix 'M_PI' undeclared using -std=c99.
+# Another solution may be using -std=gnu99
+gcc -O0 -Wall -Wextra -pedantic -std=c99 -D_DEFAULT_SOURCE -g -o if_statement_01 if_statement_01.c
+```
+
+Supported values for the `-std=` flag:
+- c90
+- c99
+- c11
+- c17
+
+## Output Preprocesor or assembly steps
+```bash
+# Stop after preprocessor step
+gcc -E <program_name>.c
+# Output assembly
+gcc -S <program_name>.c
+```
