@@ -27,6 +27,9 @@ int main(void) {
   printf("%d < %.2f -> %d\n", i, x, i < x);
   printf("%d > %.2f -> %d\n", j, y, j > y);
 
+  if (i == 1)
+    printf("i is 1!: %d\n", i == 1);
+
   if (i == M_PI) {
     printf("%d is PI!\n", i);
   } else {
