@@ -26,12 +26,13 @@ int main(void) {
     else
       // j < i , i <= k -> j <= k
       max = k;
-  } else if (j > k) {
-    // i <= j , j > k
-    max = j;
   } else {
-    // i <= j , j <= k -> i <= k
-    max = k;
+    if (j > k) {
+      // i <= j , k < j
+      max = j;
+    } else
+      // i <= j , j <= k -> i <= k
+      max = k;
   }
 
   printf("max(%d, %d, %d) = %d\n", i, j, k, max);
