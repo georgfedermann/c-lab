@@ -49,5 +49,7 @@ int main(void) {
     }
   }
 
+  printf("Setting an unsigned int to -1: %u\n", u_counter = -1);
+
   return EXIT_SUCCESS;
 }

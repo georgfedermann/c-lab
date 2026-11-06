@@ -49,6 +49,9 @@ gcc -O0 -Wall -Wextra -pedantic -std=c99 -g -o <program_name> <program_name>.c
 # If math.h is included, fix 'M_PI' undeclared using -std=c99.
 # Another solution may be using -std=gnu99
 gcc -O0 -Wall -Wextra -pedantic -std=c99 -D_DEFAULT_SOURCE -g -o if_statement_01 if_statement_01.c
+
+# My current compiler call
+gcc -O0 -Wall -Wextra -Wconversion -pedantic -std=c99 -g -o program program.c
 ```
 
 Supported values for the `-std=` flag:
