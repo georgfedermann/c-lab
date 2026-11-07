@@ -59,6 +59,10 @@ Supported values for the `-std=` flag:
 - c99
 - c11
 - c17
+## List activated and deactivated warnings:
+```bash
+gcc -Q --help=warnings -Wall -Wextra -std=c99
+```
 
 ## Output Preprocesor or assembly steps
 ```bash
