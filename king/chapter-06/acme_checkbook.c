@@ -11,7 +11,6 @@
 
 int main(void) {
   int command;
-  double input;
   int balance_cents = 0;
   bool input_succeeded = false;
   puts("**** ACME checkbook-balancing program ****");
@@ -32,11 +31,13 @@ int main(void) {
     }
     case 1:
     case 2: {
+      int input_dollar = 0, input_cent = 0;
       input_succeeded = false;
       do {
-        printf("Enter amount of debit: ");
+        printf("Enter amount of %s: ", (command == 1 ? "credit" : "debit"));
         fflush(stdout);
-        if (scanf("%lf", &input) != 1 || input < 0) {
+        if (scanf("%d.%d", &input_dollar, &input_cent) < 1 ||
+            input_dollar < 0) {
           puts(INPUT_ERROR);
           for (;;) {
             if (getchar() == '\n') {
@@ -50,9 +51,9 @@ int main(void) {
         }
       } while (!input_succeeded);
       if (command == 1) {
-        balance_cents += (int)(input * 100);
+        balance_cents += input_dollar * 100 + input_cent;
       } else {
-        balance_cents -= (int)(input * 100);
+        balance_cents -= input_dollar * 100 + input_cent;
       }
       break;
     }
