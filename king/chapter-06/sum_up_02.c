@@ -36,7 +36,7 @@ int main(void) {
     counter++;
   }
 
-  printf("Sum of entered non-zero integers: %d\n", sum);
+  printf("\nSum of entered non-zero integers: %d\n", sum);
 
   return EXIT_SUCCESS;
 }
