@@ -1,4 +1,8 @@
 # C Lab
+
+*Programmers are not to be measured by their ingenuity and
+their logic but by the completeness of their case analysis.*
+
 Learning C and exploring computer systems from the bottom up.
 
 This repository documents my exercises, experiments, and discoveries while working through
