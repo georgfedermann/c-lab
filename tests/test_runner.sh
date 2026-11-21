@@ -15,8 +15,9 @@ function run_test() {
 
   printf 'Running "%s" ... ' "$test_case"
   actual_output="$("$executable" <<<"$input" 2>"$stderr_tmp_file")" || actual_exit_code=$?
-  actual_output="$(tail -1 <<<"$actual_output")"
+  # actual_output="$(tail -1 <<<"$actual_output")"
   actual_stderr="$(cat "$stderr_tmp_file")"
+  rm "$stderr_tmp_file"
 
   if [[ "$actual_output" == "$expected_output" ]] &&
     ((actual_exit_code == expected_exit_code)) &&

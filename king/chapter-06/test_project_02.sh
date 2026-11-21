@@ -14,24 +14,24 @@ executable="$script_dir/project_02"
 # Greatest common divisor: 4
 #
 # Happy Path Tests
-run_test "King's example" "12 28" "Greatest common divisor: 4" 0 || report_failed
-run_test "GCD is 1" "73 97" "Greatest common divisor: 1" 0 || report_failed
-run_test "Limit 32bit signed int" "73 2147483647" "Greatest common divisor: 1" 0 || report_failed
-run_test "GCD is number itself" "2147483647 2147483647" "Greatest common divisor: 2147483647" 0 || report_failed
-run_test "Demonstrate symmetry 105 42" "105 42" "Greatest common divisor: 21" 0 || report_failed
-run_test "Demonstrate symmetry 42 105" "42 105" "Greatest common divisor: 21" 0 || report_failed
-run_test "Smaller number is gcd" "21 105" "Greatest common divisor: 21" 0 || report_failed
-run_test "Smaller number is gce" "105 21" "Greatest common divisor: 21" 0 || report_failed
-run_test "One number is 0" "12 0" "Greatest common divisor: 12" 0 || report_failed
-run_test "One number is 0" "0 12" "Greatest common divisor: 12" 0 || report_failed
-run_test "0 and prime" "0 73" "Greatest common divisor: 73" 0 || report_failed
-run_test "prime and 0" "73 0" "Greatest common divisor: 73" 0 || report_failed
+run_test "King's example" "12 28" $'Enter two integers: \nGreatest common divisor: 4' 0 || report_failed
+run_test "GCD is 1" "73 97" $'Enter two integers: \nGreatest common divisor: 1' 0 || report_failed
+run_test "Limit 32bit signed int" "73 2147483647" $'Enter two integers: \nGreatest common divisor: 1' 0 || report_failed
+run_test "GCD is number itself" "2147483647 2147483647" $'Enter two integers: \nGreatest common divisor: 2147483647' 0 || report_failed
+run_test "Demonstrate symmetry 105 42" "105 42" $'Enter two integers: \nGreatest common divisor: 21' 0 || report_failed
+run_test "Demonstrate symmetry 42 105" "42 105" $'Enter two integers: \nGreatest common divisor: 21' 0 || report_failed
+run_test "Smaller number is gcd" "21 105" $'Enter two integers: \nGreatest common divisor: 21' 0 || report_failed
+run_test "Smaller number is gce" "105 21" $'Enter two integers: \nGreatest common divisor: 21' 0 || report_failed
+run_test "One number is 0" "12 0" $'Enter two integers: \nGreatest common divisor: 12' 0 || report_failed
+run_test "One number is 0" "0 12" $'Enter two integers: \nGreatest common divisor: 12' 0 || report_failed
+run_test "0 and prime" "0 73" $'Enter two integers: \nGreatest common divisor: 73' 0 || report_failed
+run_test "prime and 0" "73 0" $'Enter two integers: \nGreatest common divisor: 73' 0 || report_failed
 
 # Negative Tests
 # Bad input
-run_test "Non-numerical input" "gcd(2,3)" "" 1 "Error: bad input - expected an integer number >= 0" || report_failed
-run_test "Reject negative numbers" "73 -73" "" 1 "Error: bad input - expected an integer number >= 0" || report_failed
+run_test "Non-numerical input" "gcd(2,3)" "Enter two integers: " 1 "Error: bad input - expected two nonnegative integers" || report_failed
+run_test "Reject negative numbers" "73 -73" "Enter two integers: " 1 "Error: bad input - expected two nonnegative integers" || report_failed
 # Undefined result
-run_test "Both numbers 0" "0 0" "" 2 "Error: gcd(0,0) is undefined" || report_failed
+run_test "Both numbers 0" "0 0" "Enter two integers: " 2 "Error: gcd(0,0) is undefined" || report_failed
 
 report_results
