@@ -11,7 +11,7 @@ int main(void) {
   rv = scanf("%d %d", &m, &n);
 
   if (rv != 2 || m < 0 || n < 0) {
-    fprintf(stderr, "Error: bad input - expected two nonnegative integers");
+    fprintf(stderr, "Error: bad input - expected two nonnegative integers\n");
     return 1;
   }
   if (m == 0 && n == 0) {
