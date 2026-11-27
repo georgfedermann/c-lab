@@ -13,6 +13,7 @@ function run_test() {
   local test_report
   local stderr_tmp_file="$(mktemp)"
 
+  printf -- '--------------------------------------\n'
   printf 'Running "%s" ... ' "$test_case"
   actual_output="$("$executable" <<<"$input" 2>"$stderr_tmp_file")" || actual_exit_code=$?
   # actual_output="$(tail -1 <<<"$actual_output")"
